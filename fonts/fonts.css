@@ -1,0 +1,15 @@
+
+
+@font-face {
+  font-family: 'Lemon_Milk';
+  src: url('LemonMilkbold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pump_demi_bold';
+  src: url('Pump_Demi_Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,1740 @@
+
+
+// VARIBLES
+
+$primary-red: #bc2e3a
+$primary-dark: #171717
+
+//GENERAL STYLES
+*
+  box-sizing: border-box
+
+html
+  padding: 0
+  margin: 0
+  width: 100%
+
+body
+  padding: 0
+  margin: 0
+  width: 100%
+  overflow-x: hidden
+
+.container
+  margin: 0 auto
+  max-width: 1200px
+
+h2.section-title
+  font-family: 'peace_sansregular'
+  color: rgb(73, 73, 73)
+  font-size: 60px
+  letter-spacing: 1.5px
+
+@media screen and (max-width: 600px)
+  h2.section-title
+    font-size: 40px
+
+.text
+  font-family: 'Open Sans', sans-serif
+  color: rgb(106, 106, 106)
+  font-size: 18px
+  line-height: 1.7
+
+@media screen and (max-width: 600px)
+  .text
+    font-size: 16px
+
+
+/// MIXINS
+
+=read-more-btn($color, $bgcolor)
+  background: $bgcolor
+  padding: 14px 28px
+  border-radius: 50px
+  font-family: 'Lato', sans-serif
+  font-size: 17px
+  text-transform: uppercase
+  font-weight: 800
+  color: $color
+  text-decoration: none
+  box-shadow: -3.508px 11.476px 40px 0px rgba(0, 1, 1, 0.2)
+  letter-spacing: 1px
+  cursor: pointer
+  &:link
+    color: $color
+  &:hover
+    color: $color
+  &:visited
+    color: $color
+  &:active
+    color: $color
+  @media screen and (max-width: 600px)
+    font-size: 15px
+    padding: 14px 26px
+
+
+=slider-img($url)
+  &::before
+    content: ''
+    background: url($url) no-repeat
+    background-size: cover
+    background-position: center
+    position: absolute
+    top: -93px
+    left: -70px
+    transform: rotate(-45deg)
+    width: 150%
+    height: 150%
+
+=header-text($size)
+  .shadow
+    font-size: ($size + 1)
+    line-height: ($size * 0.84)
+    .small-text
+      font-size: (($size * 0.57) + 1)
+      line-height: ($size * 0.57)
+  .main-heading
+    font-size: $size
+    line-height: ($size * 0.84)
+    .small-text
+      font-size: ($size * 0.57)
+      line-height: ($size * 0.57)
+
+=skew-img($url)
+  &::before
+    content: ''
+    position: absolute
+    transform: skewX(25deg)
+    background: url($url) no-repeat
+    background-size: cover
+    background-position: center
+    width: 160%
+    height: 120%
+    bottom: 0
+    left: 0
+    transform-origin: left bottom
+
+//ICON SPRITES STYLES
+
+.sprites-icon
+  display: block
+  background: url('../images/spritesheet.png') no-repeat
+.flag-icon
+  width: 27px
+  height: 32px
+  background-position: -5px -47px
+.computer-icon
+  width: 32px
+  height: 32px
+  background-position: -5px -5px
+.graph-icon
+  width: 32px
+  height: 32px
+  background-position: -5px -89px
+.mail-icon
+  width: 36px
+  height: 28px
+  background-position: -5px -247px
+.map-icon
+  width: 34px
+  height: 36px
+  background-position: -5px -285px
+.person-icon
+  width: 34px
+  height: 38px
+  background-position: -5px -331px
+.phone-icon
+  width: 36px
+  height: 54px
+  background-position: -5px -379px
+.large-mail-icon
+  width: 54px
+  height: 42px
+  background-position: -5px -131px
+.large-map-icon
+  width: 52px
+  height: 54px
+  background-position: -5px -183px
+
+//HEADER STYLES
+
+header
+  height: 100vh
+  background: url('../images/header-redish.jpg')
+  background-size: cover
+  background-position: center
+  position: relative
+
+// MAIN NAV STYLES
+
+.main-nav
+  display: flex
+  height: 90px
+  align-items: baseline
+  z-index: 10
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  .menu-container
+    display: flex
+    justify-content: flex-end
+    flex: 0 1 100%
+    .flex-item
+      flex-grow: 1
+
+
+
+//LIST STYLES
+
+.main-nav
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    flex: 0 1 1200px
+    justify-content: flex-end
+    li
+      padding: 5px 10px
+      font-size: 13px
+      color: #fff
+      font-weight: 700
+      text-align: center
+      text-transform: uppercase
+      font-family: 'Lato', sans-serif
+      letter-spacing: 1px
+      z-index: 2
+      a
+        text-decoration: none
+        &:link
+          color: #fff
+        &:hover
+          color: #fff
+        &:visited
+          color: #fff
+        &:active
+          color: #fff
+
+//LOGO STYLES
+
+.main-nav
+  .logo
+    font-family: 'Lato', sans-serif
+    color: #fff
+    font-size: 36px
+    margin: 25px 5px 0 0
+    margin-left: calc((100vw - 1200px)/2 - 125px)
+    text-align: right
+    font-weight: 900
+
+//SOCIAL STYLES
+
+.main-nav
+  .nav-icons-container
+    display: flex
+    flex-grow: 1
+    transition: 0.3s linear
+  .nav-icons
+    text-decoration: none
+    font-size: 20px
+    margin: 0 15px
+    display: flex
+    &:link
+      color: #fff
+    &:hover
+      color: #fff
+    &:visited
+      color: #fff
+    &:active
+      color: #fff
+  .search-icon
+    justify-content: flex-end
+
+//NAV HAMBURGER
+
+.main-nav
+  .hamburger
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: -18px
+      left: -9px
+      width: 80px
+      height: 80px
+      border-radius: 50%
+      background: #000
+      transform: scale(0)
+      transition: 0.5s 0.1s
+    width: 60px
+    height: 39px
+    transform: rotate(0deg)
+    transition: .5s ease-in-out
+    cursor: pointer
+    position: relative
+    display: none
+    flex: 0 1 60px
+    margin-right: 20px
+    span
+      display: block
+      position: absolute
+      height: 7px
+      width: 100%
+      background: #fff
+      border-radius: 9px
+      opacity: 1
+      left: 0
+      transform: rotate(0deg)
+      transition: .25s ease-in-out
+      &:nth-child(1)
+        top: 0
+        transform-origin: left center
+      &:nth-child(2)
+        top: 18px
+        transform-origin: left center
+      &:nth-child(3)
+        top: 36px
+        transform-origin: left center
+
+
+.main-nav.open
+  position: fixed
+  .hamburger
+    &::before
+      transform: scale(40)
+      transition: 0.5s
+    span
+      &:nth-child(1)
+        transform: rotate(45deg)
+        top: -3px
+        left: 8px
+      &:nth-child(2)
+        width: 0%
+        opacity: 0
+      &:nth-child(3)
+        transform: rotate(-45deg)
+        top: 39px
+        left: 8px
+  .nav-mobile-list
+    display: flex
+    z-index: 2
+    justify-content: center
+    padding: 0
+    font-size: 30px
+    .nav-icons
+      font-size: 30px
+
+//NAV MEDIA
+
+@media screen and (max-width: 1500px)
+  .main-nav
+    .logo
+      margin-left: 20px
+
+@media screen and (max-width: 830px)
+  .main-nav
+    height: 100vh
+    overflow: hidden
+    flex-wrap: wrap
+    .menu-container
+      margin-top: calc(50vh - 90px)
+      transform: translate(0, -50%)
+      flex-wrap: wrap
+    .nav-mobile-list
+      transition: 0.5s 0.3s
+      opacity: 0
+      display: none
+    .flex-item
+      flex: 1 1 100%
+    .nav-list
+      flex-wrap: wrap
+      li
+        flex: 1 1 100%
+        padding: 15px 10px
+        a
+          padding: 20px 10px
+    .logo-btn-container
+      display: flex
+      flex: 1 1 100%
+      align-items: baseline
+      padding-bottom: 5px
+      .logo
+        flex: 1 1 calc(50% - 15px)
+        text-align: left
+      .hamburger
+        display: flex
+    .nav-icons-container
+      .nav-icons
+        flex: 0 1 50%
+        margin: 0
+        justify-content: center
+        padding: 10px
+
+@media screen and (max-width: 450px)
+  .main-nav.open
+    .menu-container
+      margin-top: calc(50vh - 45px)
+    .nav-mobile-list
+      font-size: 20px
+      a
+        padding: 16px
+      .nav-icons
+        font-size: 24px
+
+@media screen and (max-width: 360px)
+  .main-nav.open
+    .nav-mobile-list
+      font-size: 18px
+      a
+        padding: 12px
+      .nav-icons
+        font-size: 22px
+
+//HEADER IMG STYLES
+
+header
+  .header-img
+    position: absolute
+    bottom: -8%
+    right: calc((100vw - 1200px)/2 - 450px + 12vw)
+    z-index: 1
+    width: 900px
+    height: auto
+
+//HEADER TEXT STYLES
+
+header
+  .main-heading
+    font-family: 'Lemon_Milk'
+    text-transform: uppercase
+    color: rgb(255, 255, 255)
+    text-align: center
+    width: fit-content
+    margin-top: calc(50vh - 332px/2)
+    margin-left: 12%
+    z-index: 2
+    .small-text
+      display: block
+  .shadow
+    font-family: 'Lemon_Milk'
+    text-transform: uppercase
+    text-align: center
+    margin-top: calc(50vh - 332px/2)
+    margin-left: 12%
+    color: transparent
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9)
+    display: inline-block
+    .small-text
+      display: block
+
+header
+  +header-text(160px)
+
+//SLOGAN BACKGROUND
+
+header
+  .slogan-wrapper
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: url('../images/header-grey.jpg') no-repeat
+    background-position: center
+    background-size: cover
+    -webkit-background-clip: text
+    -webkit-text-fill-color: #fff
+    -webkit-text-fill-color: transparent
+
+//BUTTON STYLES
+
+header
+  .read-more
+    +read-more-btn(#242424, #fff)
+    width: fit-content
+    display: block
+    text-align: center
+    -webkit-text-fill-color: #242424
+    margin-left: calc(12% + 784px/2 - 164px/2)
+
+//HEADER MEDIA
+
+@media screen and (max-width: 1550px)
+  header
+    .header-img
+      width: 60%
+      right: -5%
+      bottom: 0
+    +header-text(140px)
+    .shadow
+      margin-top: calc(50vh - 332px/2)
+      margin-left: 12%
+    .main-heading
+      margin-top: calc(50vh - 332px/2)
+      margin-left: 12%
+    .read-more
+      margin-left: calc(12% + 686px/2 - 164px/2)
+
+@media screen and (max-width: 1350px)
+  header
+    .header-img
+      top: 55%
+      transform: translate(0, -50%)
+    .shadow
+      margin-left: 6%
+    .main-heading
+      margin-left: 6%
+    .read-more
+      margin-left: calc(6% + 686px/2 - 164px/2)
+
+@media screen and (max-width: 1200px)
+  header
+    .header-img
+      width: 60%
+      right: -5%
+      bottom: 0
+    +header-text(120px)
+    .read-more
+      margin-left: calc(6% + 588px/2 - 164px/2)
+
+@media screen and (max-width: 1000px)
+  header
+    height: auto
+    padding-bottom: 40px
+    .header-img
+      width: 450px
+      left: 50%
+      transform: translate(-50%, -50%)
+      right: 0
+      top: 180px
+      position: relative
+    .shadow
+      margin-left: calc(50% - 588px/2)
+      margin-top: 15%
+      margin-bottom: 0
+    .main-heading
+      margin-left: calc(50% - 588px/2)
+      margin-top: 15%
+    .read-more
+      margin-left: 50%
+      transform: translate(-50%, 0)
+
+@media screen and (max-width: 650px)
+  header
+    .header-img
+      width: 80%
+    +header-text(90px)
+    .shadow
+      margin-left: calc(50% - 441px/2)
+      margin-top: 100px
+    .main-heading
+      line-height: 75px
+      margin-left: calc(50% - 441px/2)
+      margin-top: 100px
+
+@media screen and (max-width: 470px)
+  header
+    .header-img
+      top: 140px
+    +header-text(59px)
+    .shadow
+      margin-left: calc(50% - 289px/2)
+    .main-heading
+      margin-left: calc(50% - 289px/2)
+
+@media screen and (max-width: 400px)
+  header
+    .header-img
+      top: 115px
+
+
+//ABOUT US SECTION
+
+.about-us
+  overflow: hidden
+  position: relative
+  .container
+    display: flex
+    margin: 90px auto
+    flex-wrap: wrap
+
+//TRIANGLE
+
+.about-us
+  .triangle-top
+    position: absolute
+    right: -5%
+    width: 60%
+    height: 0
+    padding-left: 36%
+    padding-top: 36%
+    overflow: hidden
+    &::after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      margin-left: -800px
+      margin-top: -800px
+      border-left: 800px solid transparent
+      border-right: 800px solid transparent
+      border-top: 800px solid #000
+
+
+//ABOUT US TEXT STYLES
+
+.about-us
+  .section-title
+    margin: 0
+    flex: 1 1 100%
+  .text-container
+    flex: 1 1 40%
+    .read-more
+      +read-more-btn(#fff, $primary-red)
+    .text
+      margin: 80px 0
+
+//IMG STYLES
+
+.about-us
+  .img-container
+    flex: 1 1 60%
+    img
+      width: 100%
+      height: auto
+      transform: translate(30px, 0)
+
+//ABOUT US SECTION MEDIA
+
+@media screen and (max-width: 1300px)
+  .about-us
+    .container
+      margin: 90px 50px
+
+@media screen and (max-width: 1000px)
+  .about-us
+    .section-title
+      order: 0
+      margin-bottom: 20px
+    .text-container
+      order: 2
+      flex: 1 1 100%
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      .text
+        margin: 20px 0
+        flex: 1 1 100%
+      .read-more
+        margin-top: 10px
+    .img-container
+      order: 1
+      flex: 1 1 100%
+      margin: 20px
+      img
+        transform: translate(0, 0)
+
+//TRIANGLE CHANGE
+
+@media screen and (max-width: 1000px)
+  .about-us
+    .triangle-top
+      position: absolute
+      right: 0
+      width: 0
+      height: 0
+      top: 0
+      padding-left: 50%
+      padding-top: 50%
+      overflow: hidden
+      &::after
+        content: ""
+        display: block
+        width: 0
+        height: 0
+        margin-left: -600px
+        margin-top: -600px
+        border-left: 600px solid transparent
+        border-top: 600px solid #000
+
+@media screen and (max-width: 660px)
+  .about-us
+    .img-container
+      margin: 0
+    .triangle-top
+      position: absolute
+      right: 0
+      width: 0
+      height: 0
+      top: 0
+      padding-left: 35%
+      padding-top: 35%
+      overflow: hidden
+      &::after
+        content: ""
+        display: block
+        width: 0
+        height: 0
+        margin-left: -400px
+        margin-top: -400px
+        border-left: 400px solid transparent
+        border-top: 400px solid #000
+
+@media screen and (max-width: 600px)
+  .about-us
+    .container
+      margin: 80px 15px
+
+
+//ICON SECTION
+
+.icon-section
+  background-color: #f5f5f5
+  padding: 50px 0 150px 0
+  position: relative
+  .container
+    display: flex
+    flex-wrap: wrap
+
+//TRIANGLE
+
+.icon-section
+  .triangle-left
+    position: absolute
+    top: 50%
+    left: 0
+    width: 5%
+    height: 0
+    transform: translate(0, -50%)
+    padding-top: 10%
+    padding-left: 10%
+    padding-bottom: 10%
+    overflow: hidden
+    &::after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      margin-left: -190px
+      margin-top: -125px
+      border-top: 125px solid transparent
+      border-bottom: 125px solid transparent
+      border-left: 160px solid $primary-red
+
+
+.icon-section
+  .section-title
+    text-align: center
+    flex: 1 1 100%
+  .icon-container
+    flex: 1 1 calc(400px - 20px)
+    margin: 100px 10px 0 10px
+    display: flex
+    flex-wrap: wrap
+
+//ICON STYLES
+
+.icon-section
+  .img-container
+    width: 75px
+    height: 75px
+    border-radius: 50%
+    background-color: $primary-red
+    .sprites-icon
+      margin-top: 50%
+      margin-left: 50%
+      transform: translate(-50%, -50%)
+
+
+
+//ICON TEXT STYLES
+
+.icon-section
+  .section-title
+    margin-bottom: 0
+  .icon-title
+    font-family: 'Open Sans', sans-serif
+    color: rgb(111, 111, 110)
+    font-size: 26px
+    font-weight: 800
+    margin-left: 10px
+    margin-bottom: 5px
+  .text
+    margin-left: 85px
+    margin-top: 0
+
+//ICON SECTION MEDIA
+
+@media screen and (max-width: 1240px)
+  .icon-section
+    padding-bottom: 100px
+    .triangle-left
+      display: none
+    .icon-container
+      flex: 1 1 calc(360px - 40px)
+      margin: 80px 20px 0 20px
+
+@media screen and (max-width: 750px)
+  .icon-section
+    padding-bottom: 50px
+    .icon-container
+      flex-direction: column
+      align-items: center
+      flex: 1 1 calc(280px - 20px)
+      margin: 50px 10px 0 10px
+      .text
+        margin: 5px 20px
+        text-align: center
+      .icon-title
+        margin: 15px 0
+
+
+
+//WORK SECTION
+
+.work
+  position: relative
+  .work-container
+    margin: 120px 0 240px 0
+    margin-left: calc((100vw - 1200px)/2)
+
+
+//RED TRIANGLE
+
+.work
+  .triangle-right
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translate(0, -50%)
+    width: 35%
+    height: 0
+    padding-top: 50%
+    padding-bottom: 50%
+    overflow: hidden
+    &:after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      margin-top: -750px
+      border-top: 800px solid transparent
+      border-bottom: 800px solid transparent
+      border-right: 800px solid $primary-red
+
+.work
+  *
+    z-index: 2
+
+.work
+  .content-wrapper
+    display: flex
+
+.work
+  .gallery
+    flex: 0 1 80%
+    overflow: hidden
+    display: table
+    width: 100%
+    margin: 20px 0
+
+
+.work
+  .text-container
+    flex: 0 1 20%
+    .read-more
+      +read-more-btn(#fff, $primary-red)
+      transform: translate(-10px, 0)
+    >.text
+      margin-bottom: 60px
+
+.work
+  .gallery-item
+    width: 22%
+    height: 320px
+    margin: 0 40px
+    float: left
+    display: block
+    transform: skewX(-25deg)
+    overflow: hidden
+    background-position: center
+    background-size: cover
+    position: relative
+    transition: ease-out 0.7s 0.4s
+    >*
+      transform: skewX(25deg)
+      color: #fff
+
+  //OFFSET MARGIN TO FIRST GALLERY ITEM
+  .gallery-item:first-child
+    margin-left: 100px
+
+
+//BACKGROUND FOR GALLETY ITEMS
+
+.work
+  .gallery-item-1
+    +skew-img('../images/gallery-img-1.jpg')
+  .gallery-item-2
+    +skew-img('../images/gallery-img-2.jpg')
+  .gallery-item-3
+    +skew-img('../images/gallery-img-3.jpg')
+  .gallery-item
+    &::after
+      content: ''
+      display: block
+      background: rgba(0, 0, 0, 0.4)
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+//GALLERY ITEMS TEXT STYLES
+
+.work
+  .gallery-item
+    .img-title
+      font-family: 'Lato', sans-serif
+      text-transform: uppercase
+      font-weight: 700
+      position: absolute
+      bottom: 0
+      left: 40px
+      font-size: 50px
+      margin: 0
+      margin-bottom: 6px
+      transition: 0.4s 0.1s
+    .number
+      font-family: 'Lato', sans-serif
+      position: absolute
+      top: 10px
+      right: 30px
+      font-weight: 700
+      font-size: 60px
+      margin: 0
+    .text
+      margin: 0 34px
+      position: absolute
+      bottom: -85px
+      left: 40px
+      transition: 0.4s 0.1s
+
+
+
+//HOVER ON GALLERY ITEMS
+.work
+  .gallery-item
+    &:hover
+      .img-title
+        bottom: 100px
+      .text
+        bottom: 20px
+
+//HOVER ON GALLERY
+
+.work
+  .gallery
+    &:hover
+      .gallery-item
+        transition: ease-out 0.7s
+        margin: 0 2px
+      .gallery-item-1
+        margin: 0 2px 0 100px
+
+
+//WORK MEDIA
+
+@media screen and (max-width: 1510px)
+  .work
+    .gallery-item
+      .text
+        margin: 0 15px
+
+@media screen and (max-width: 1250px)
+
+  .work
+    .work-container
+      margin: 120px 0 240px 0
+
+  .work
+    .content-wrapper
+      flex-wrap: wrap
+  .work
+    .section-title
+      margin-left: 50px
+    .text-container
+      .text
+        margin-left: 50px
+        margin-right: 30%
+      .read-more
+        margin-left: 50px
+
+
+  .work
+    .gallery
+      flex: 0 1 100%
+      order: 1
+      padding: 0 60px
+      display: flex
+      justify-content: center
+      .gallery-item
+        flex: 0 1 calc( 30% - 8px)
+        width: 24%
+        height: 250px
+        margin: 0 4px
+        .img-title
+          font-size: 36px
+        .text
+          font-size: 14px
+    .text-container
+      flex: 0 1 100%
+      order: 2
+
+
+  .work
+    .gallery-item
+      &:hover
+        flex-grow: 1
+
+  .work
+    .gallery
+      &:hover
+        .gallery-item
+          transition: ease-out 0.7s
+          margin: 0 4px
+
+
+@media screen and (max-width: 880px)
+  .work
+    .section-title
+      margin-left: 0
+      text-align: center
+    .work-container
+      margin: 60px 0 140px 0
+    .triangle-right
+      display: none
+    .gallery
+      padding: 0 60px
+      overflow: hidden
+      width: auto
+      .gallery-item
+        flex: 0 1 280px
+        height: 220px
+        &:hover
+          .img-title
+            bottom: 0
+        .img-title
+          font-size: 30px
+          left: 20px
+        .text
+          display: none
+        .number
+          font-size: 50px
+
+    .text-container
+      .text
+        margin: 20px 30px 50px 30px
+      .read-more
+        margin-left: calc(50% - 165px/2)
+
+@media screen and (max-width: 650px)
+  .work
+    .work-container
+      margin: 40px 0 100px 0
+    .gallery
+      padding: 0 60px
+      flex-direction: column
+      &:hover
+        .gallery-item
+          margin: 5px 4px 0 4px
+      .gallery-item
+        flex: 0 1 120px
+        width: 100%
+        margin-top: 5px
+        .number
+          right: 15px
+
+
+//SLIDER SECTION
+
+.slider
+  background: #f5f5f5
+  position: relative
+  padding: 80px
+  .slider-list
+    margin: 0
+    padding: 0
+    list-style: none
+    position: relative
+    min-height: 600px
+
+//SLIDER BUTTON
+
+.slider
+  .left-btn
+    position: absolute
+    left: 40px
+    top: 50%
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 50px 50px 50px 0
+    border-color: transparent #424240 transparent transparent
+    z-index: 100
+  .right-btn
+    position: absolute
+    right: 40px
+    top: 50%
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 50px 0 50px 50px
+    border-color: transparent transparent transparent #424240
+    z-index: 100
+
+///SLIDER HEADING STYLES
+
+.slider
+  .section-title
+    text-align: center
+
+//SLIDER TRIANGLE
+
+.slider
+  .triangle-left
+    position: absolute
+    top: 0
+    left: 0
+    width: 5%
+    height: 0
+    transform: translate(0, -50%)
+    padding-top: 15%
+    padding-left: 15%
+    padding-bottom: 15%
+    overflow: hidden
+    &::after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      margin-left: -300px
+      margin-top: -300px
+      border-top: 300px solid transparent
+      border-bottom: 300px solid transparent
+      border-left: 300px solid #000
+
+
+//SLIDER ITEM IMG STYLES
+
+.slider
+  .img-container
+    transform: rotate(45deg)
+    width: 400px
+    height: 400px
+    border: 20px solid #fff
+    overflow: hidden
+    position: relative
+    box-shadow: -3.508px 11.476px 40px 0px rgba(0, 1, 1, 0.22)
+  .list-item-1
+    .img-container
+      +slider-img('../images/team-1.jpg')
+  .list-item-2
+    .img-container
+      +slider-img('../images/team-2.jpg')
+  .list-item-3
+    .img-container
+      +slider-img('../images/team-3.jpg')
+  .list-item-4
+    .img-container
+      +slider-img('../images/team-4.jpg')
+  .list-item-5
+    .img-container
+      +slider-img('../images/team-5.jpg')
+
+
+.slider
+  .list-item
+    transition: 0.8s
+    display: flex
+    flex-direction: column
+    align-items: center
+
+//SLIDER TEXT STYLES
+
+.slider
+  .name
+    font-family: 'Open Sans', sans-serif
+    font-size: 22px
+    font-weight: 700
+    color: #fff
+    z-index: 6
+    background: #000
+    transform: skewX(40deg)
+    p
+      margin: 8px 36px
+      transform: skewX(-40deg)
+  .job
+    font-family: 'Open Sans', sans-serif
+    font-size: 16px
+    font-weight: 700
+    color: #fff
+    background: $primary-red
+    z-index: 6
+    transform: skewX(40deg) translate(10px, -4px)
+    font-style: italic
+    transition: 0.8s
+    p
+      transform: skewX(-40deg)
+      margin: 6px 20px
+      opacity: 1
+
+
+//SLIDER CENTER LEFT RIGHT BEHIND
+
+.list-item.left
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-150%, -52%) scale(0.7)
+  z-index: 3
+  opacity: 0.5
+  .job
+    opacity: 0
+.list-item.center
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  z-index: 4
+.list-item.right
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(50%, -52%) scale(0.7)
+  z-index: 3
+  opacity: 0.5
+  .job
+    opacity: 0
+.list-item.behind
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%) scale(0.1)
+  z-index: 0
+  opacity: 0
+  .job
+    opacity: 0
+
+//SLIDER MEDIA
+
+@media screen and (max-width: 1500px)
+  .slider
+    .left-btn
+      left: 10px
+    .right-btn
+      right: 10px
+
+@media screen and (max-width: 1400px)
+  .slider
+    .list-item
+      .img-container
+        width: 29.5vw
+        height: 29.5vw
+        &::before
+          top: -22%
+          left: -22%
+
+@media screen and (max-width: 1400px)
+  .slider
+    .list-item
+      .img-container
+        border: 15px solid #fff
+
+@media screen and (max-width: 1200px)
+  .slider
+    .list-item
+      .name
+        font-size: 18px
+      .job
+        font-size: 14px
+
+@media screen and (max-width: 1000px)
+  .slider
+    .list-item
+      .name
+        p
+          margin: 6px 28px
+      .job
+        p
+          margin: 4px 16px
+  .slider
+    .slider-list
+      min-height: 450px
+
+@media screen and (max-width: 800px)
+  .slider
+    padding: 40px 0
+    .left-btn
+      top: 55%
+      border-width: 35px 35px 35px 0
+    .right-btn
+      top: 55%
+      border-width: 35px 0 35px 35px
+    .list-item
+      .img-container
+        border: 10px solid #fff
+        width: 40vw
+        height: 40vw
+      .name
+        transform: translate(0, -2px) skewX(40deg)
+        p
+          margin: 4px 20px
+      .job
+        p
+          margin: 3px 10px
+  .slider
+    .slider-list
+      min-height: 480px
+      overflow: hidden
+
+  .slider
+    .list-item.left
+      top: 50%
+      left: 50%
+      transform: translate(-240%, -45%) scale(1)
+      opacity: 0
+      .job
+        opacity: 1
+    .list-item.center
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -45%) scale(1)
+      .job
+        opacity: 1
+    .list-item.right
+      transform: translate(140%, -45%) scale(1)
+      opacity: 0
+      top: 50%
+      left: 50%
+      .job
+        opacity: 1
+    .list-item.behind
+      transform: translate(-50%, -45%) scale(1)
+      opacity: 0
+      top: 50%
+      left: 50%
+      .job
+        opacity: 1
+
+
+@media screen and (max-width: 600px)
+  .slider
+    .slider-list
+      min-height: 450px
+
+  .slider
+    .list-item
+      .img-container
+        border: 8px solid #fff
+        width: 45vw
+        height: 45vw
+      .name
+        font-size: 14px
+      .job
+        font-size: 11px
+
+@media screen and (max-width: 450px)
+  .slider
+    padding: 20px 0
+    .slider-list
+      min-height: 360px
+
+  .slider
+    .list-item
+      .img-container
+        border: 6px solid #fff
+        width: 50vw
+        height: 50vw
+
+
+//CLIENTS SECTION
+
+.clients
+  position: relative
+  padding: 70px 0
+  .client-container
+    margin-top: calc(15% - 69px)
+    margin-bottom: 15%
+    display: flex
+    align-items: center
+    .quote-container
+      flex: 0 1 calc(70% - 15%)
+      margin-left: 15%
+
+.clients
+  .section-title
+    margin-left: calc((100vw - 1200px)/2 + 40px)
+
+.clients
+  .triangle-left
+    position: absolute
+    top: 50%
+    left: 0
+    width: 0
+    height: 0
+    transform: translate(0, -48%)
+    padding-top: 50%
+    padding-left: 30%
+    padding-bottom: 50%
+    overflow: hidden
+    z-index: 1
+    &::after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      margin-left: -600px
+      margin-top: -650px
+      border-top: 650px solid transparent
+      border-bottom: 650px solid transparent
+      border-left: 600px solid $primary-red
+
+.clients
+  .triangle-top
+    position: absolute
+    right: 0
+    top: 0
+    width: 0
+    height: 0
+    padding-left: 24%
+    padding-top: 24%
+    overflow: hidden
+    &::after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      margin-left: -450px
+      margin-top: -480px
+      border-left: 450px solid transparent
+      border-top: 450px solid #000
+
+
+
+//CLIENT IMG STYLES
+
+.clients
+  .img-container
+    height: 350px
+    transform: rotate(45deg)
+    overflow: hidden
+    box-shadow: -3.508px 11.476px 40px 0px rgba(0, 1, 1, 0.2)
+    position: relative
+    border: 16px solid #fff
+    background: #fff
+    z-index: 2
+    flex: 0 1 350px
+    .client-img
+      width: 150%
+      height: 150%
+      transform: rotate(-45deg)
+      position: absolute
+      top: -25%
+      left: -25%
+      transition: ease 0.4s
+    .client-img.change
+      opacity: 0
+
+//CLIENTS LIST STYLES
+
+.clients
+  .client-list
+    margin: 0
+    padding: 0
+    margin-top: 80px
+    list-style: none
+    display: flex
+    width: 400px
+    .client
+      position: relative
+      transform: rotate(45deg)
+      overflow: hidden
+      width: 60px
+      height: 60px
+      margin: 0 20px
+      outline: 0px solid $primary-red
+      transition: 0.4s
+      img
+        position: absolute
+        transform: rotate(-45deg)
+        top: -15px
+        left: -15px
+        width: 90px
+        height: 90px
+    .client.active
+      outline: 5px solid $primary-red
+
+
+//CLIENT LIST TEXT STYLES
+
+.clients
+  .quote
+    font-style: italic
+    transition: ease 0.4s
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      background: url('../images/quote-marks.png') no-repeat
+      background-size: contain
+      background-position: center
+      width: 60px
+      height: 50px
+      top: -15px
+      left: -76px
+  .author
+    font-weight: 700
+    transition: ease 0.4s
+  .quote.change
+    transform: translate(-40px, 0)
+    opacity: 0
+  .author.change
+    transform: translate(-40px, 0)
+    opacity: 0
+
+//CLIENTS MEDIA
+
+@media screen and (max-width: 1600px)
+  .clients
+    .section-title
+      margin-left: 15%
+
+@media screen and (max-width: 1450px)
+  .clients
+    .section-title
+      margin-left: 15%
+    .client-container
+      margin-left: 8%
+      margin-right: 8%
+      .img-container
+        flex-basis: 24vw
+        height: 24vw
+
+@media screen and (max-width: 1000px)
+  .clients
+    padding: 35px 0
+    .section-title
+      text-align: center
+      margin-left: 0
+    .triangle-left
+      display: none
+    .client-container
+      flex-direction: column
+      .img-container
+        flex: 0 1 300px
+        width: 300px
+        border: 14px solid #fff
+        margin: 20px 0
+      .quote-container
+        flex: initial
+        margin: 10% 0 0 5%
+        margin-left: calc(5% + 60px)
+      .client-list
+        width: auto
+        justify-content: center
+        margin-left: -60px
+        margin-top: 50px
+
+@media screen and (max-width: 600px)
+  .clients
+    .client-container
+      .quote-container
+        margin-left: calc(5% + 36px)
+      .img-container
+        flex: 0 1 48vw
+        width: 48vw
+        border: 10px solid #fff
+        margin: 32px 0 16px 0
+      .client-list
+        margin-left: -36px
+    .quote
+      &::before
+        width: 36px
+        height: 30px
+        top: -7px
+        left: -42px
+
+@media screen and (max-width: 400px)
+  .clients
+    .client-container
+      .img-container
+        border: 8px solid #fff
+        flex: 0 1 55vw
+        width: 55vw
+      .quote-container
+        .quote
+          margin-left: 5px
+          margin-right: 5px
+
+//FOOTER
+
+footer
+  background: url('../images/footer-bg.jpg') no-repeat
+  background-position: center
+  background-size: cover
+  position: relative
+  overflow: hidden
+
+//FOOTER TRIANGLE
+
+footer
+  .triangle-bottom
+    width: 20%
+    height: 0
+    padding-left: 10%
+    padding-bottom: 10%
+    overflow: hidden
+    position: absolute
+    bottom: 0
+    right: -2%
+    &::after
+      content: ""
+      display: block
+      width: 0
+      height: 0
+      margin-left: -200px
+      border-left: 200px solid transparent
+      border-right: 200px solid transparent
+      border-bottom: 200px solid $primary-red
+
+
+//FOOTER TEXT STYLES
+
+footer
+  .section-title
+    text-align: center
+    margin: 0
+    padding: 80px 0 40px 0
+  .text
+    color: #fff
+    margin: 0 5px
+  .item-title
+    font-size: 22px
+    font-weight: 700
+
+//ICONS STYLES
+
+footer
+  .icons-container
+    display: flex
+    margin: 70px 0 110px 0
+    justify-content: space-around
+    .items
+      flex: 0 1 33.333%
+      display: flex
+      align-items: center
+      &:nth-child(2)
+        justify-content: flex-end
+      &:nth-child(3)
+        justify-content: flex-end
+      .icon
+        align-self: center
+        flex: 0 1 40px
+        width: 20px
+        height: auto
+        .phone-icon
+          margin-left: 12px
+      .item-description
+        flex: 0 1 260px
+        padding-left: 30px
+
+//FOOTER SOCIAL STYLES
+
+footer
+  .social
+    text-align: center
+    margin: 20px 0
+    a
+      .fa
+        padding: 5px 18px
+        font-size: 24px
+        transition: 0.4s linear
+      &:link
+        color: #fff
+      &:hover
+        color: #fff
+        .fa
+          transform: scale(1.2)
+      &:visited
+        color: #fff
+      &:active
+        color: #fff
+
+footer
+  .copyright
+    text-align: center
+    padding: 20px 30px 40px 30px
+    border-top: 2px solid #424240
+    width: max-content
+    margin-left: 50%
+    transform: translate(-50%, 0)
+
+//FOOTER MEDIA
+
+@media screen and (max-width: 1250px)
+  footer
+    .icons-container
+      flex-wrap: wrap
+      justify-content: space-around
+      .items
+        flex: 0 1 410px
+        margin: 0 10px
+        justify-content: center
+        .item-description
+          flex: initial
+        &:nth-child(1)
+          margin-bottom: 40px
+        &:nth-child(2)
+          margin-bottom: 40px
+        &:nth-child(n)
+          justify-content: center
+
+@media screen and (max-width: 1000px)
+  footer
+    .triangle-bottom
+      display: none
+    .icons-container
+      .items
+        flex: 0 1 310px
+
+@media screen and (max-width: 750px)
+  footer
+    .copyright
+      width: auto
+      margin: 0 20px
+      transform: translate(0, 0)
+      padding: 20px 10px
+
+
+
+@media screen and (max-width: 677px)
+  footer
+    .icons-container
+      margin: 40px 0 80px 0
+      .items
+        margin-right: 0
+        &:nth-child(n)
+          justify-content: flex-start
+        .item-description
+          padding-left: 20px
+
+@media screen and (max-width: 550px)
+  footer
+    .social
+      a
+        .fa
+          padding: 16px 22px
+    .copyright
+      padding: 20px 0
