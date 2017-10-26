@@ -77,11 +77,11 @@
         if ($(window).width() <= 830) {    
 $( function() {
     $( '#gallery' ).jGallery({ "backgroundColor":"000000", "textColor":"1F96FF",
-        "thumbnailsPosition":"left",height: '450px',  canChangeMode: true, canZoom: false, slideshowAutostart: true,   draggableZoom: true, browserHistory: false, slideshow: true , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
+        "thumbnailsPosition":"left",height: '450px',  canChangeMode: true, canZoom: false, slideshowAutostart: false,   draggableZoom: true, browserHistory: false, slideshow: false , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
 } );} else if ($(window).width() > 830) {    
 $( function() {
     $( '#gallery' ).jGallery({ "backgroundColor":"000000", "textColor":"1F96FF",
-        "thumbnailsPosition":"left",height: '800px',  canChangeMode: true, canZoom: false, slideshowAutostart: true,  draggableZoom: true, browserHistory: false, slideshow: true , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
+        "thumbnailsPosition":"left",height: '800px',  canChangeMode: true, canZoom: false, slideshowAutostart: false,  draggableZoom: true, browserHistory: false, slideshow: false , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
 } );};
     
     
@@ -90,13 +90,13 @@ $( function() {
         if ($(window).width() <= 830 && mobile === 1) {
             $( function() {
     $( '#gallery' ).jGallery({ "backgroundColor":"000000", "textColor":"1F96FF",
-        "thumbnailsPosition":"left",height: '450px', canChangeMode: true, canZoom: false, slideshowAutostart: true,  draggableZoom: true, browserHistory: false, slideshow: true , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
+        "thumbnailsPosition":"left",height: '450px', canChangeMode: true, canZoom: false, slideshowAutostart: false,  draggableZoom: true, browserHistory: false, slideshow: false , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
 } );
 mobile = 0;
         } else if ($(window).width() > 830 && mobile === 0) {
             $( function() {
     $( '#gallery' ).jGallery({ "backgroundColor":"000000", "textColor":"1F96FF",
-        "thumbnailsPosition":"left",height: '800px', canChangeMode: true, canZoom: false, slideshowAutostart: true,  draggableZoom: true, browserHistory: false, slideshow: true , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
+        "thumbnailsPosition":"left",height: '800px', canChangeMode: true, canZoom: false, slideshowAutostart: false,  draggableZoom: true, browserHistory: false, slideshow: false , tooltipSeeAllPhotos:'Zobacz wszystkie zdjęcia', tooltipSeeOtherAlbums:'Przejdź do innych albumów', tooltipFullScreen: 'Pełny ekran', tooltipToggleThumbnails:'Pokaż/Ukryj miniaturki', tooltipRandom:'Włącz/Wyłącz wybór dowolnego zdjęcia'});
 } );
 mobile = 1;
         }

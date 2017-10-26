@@ -123,7 +123,7 @@ rightBtn.addEventListener('click', () => changeSlide(true));
 $j(window).scroll(function() {
   
 		var ScrollPos = $j(window).scrollTop();
-    if (ScrollPos > 380) {
+    if (ScrollPos > 100) {
         $j('.main-nav').removeClass('fixod');
         $j('.main-nav').addClass('fixyd');
         $j('.logo').removeClass('invis');
